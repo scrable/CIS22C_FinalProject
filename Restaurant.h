@@ -1,13 +1,28 @@
-#ifndef _RESTAURANT_H
-#define _RESTAURANT_H
+#ifndef RESTAURANT_H
+#define RESTAURANT_H
+
+#include <iostream>
+
+using namespace std;
 
 class Restaurant
 {
 private:
-    //list attributes for each restaurant here
-    //ex. name, cuisine, location, etc
-public:
-    Restaurant();
-};
+	string name;
+	string cuisine;
+	int openhour;
+	int closehour;
+	double rating;
+	string location;
+	double cost;
 
-#endif // _RESTAURANT_H
+public:
+	Restaurant() : name("default"), cuisine("default"), openhour(0), closehour(0), rating(0), location("default"), cost(0) {}
+	string getName();
+	string getCuisine();
+	int getOpenhour();
+	int getClosehour();
+	double getRating();
+	string getLocation();
+	double getCost();
+};

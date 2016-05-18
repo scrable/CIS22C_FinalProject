@@ -33,3 +33,4 @@ http://deanzacollegecis.jenniferparrish.net/cis22c/course-project
 - [ ] Provide relevant test cases for the final presentation
 
 Remember to do your peer evaluations on time. Check the schedule on her website.
+Please make sure for every cin statement there is a check for if the input is valid. It will make debugging much easier later on.

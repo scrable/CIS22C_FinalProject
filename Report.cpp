@@ -10,6 +10,16 @@
 
 using namespace std;
 
+Report::Report()
+{
+
+}
+
+Report::Report(BST<string>* database)
+{
+    uniqueBSTDatabase = database;
+}
+
     /* SEARCH */
 
 void Report::searchMainMenu()

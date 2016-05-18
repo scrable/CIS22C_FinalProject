@@ -3,14 +3,15 @@
 
 #include "Report.h"
 #include "RestaurantDatabase.h"
-//#include "BST.h"
 
 class MainMenu
 {
 private:
     Report report;
     RestaurantDatabase* restaurantDatabase;
-   // BST<string>* uniqueBSTDatabase;
+
+    //contains a pointer to the unique key BST
+    BST<string>* uniqueBSTDatabase;
 public:
     //constructor
     MainMenu();

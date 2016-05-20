@@ -7,6 +7,7 @@ Restaurant::Restaurant()
     location = "default location";
     openingHour = 0;
     closingHour = 0;
+    phoneNumber = 0.0;
     rating = 0.0;
     cost = 0.0;
 }
@@ -51,44 +52,44 @@ double Restaurant::getPhoneNumber()
     return phoneNumber;
 }
 
-void Restaurant::setName(string name)
+void Restaurant::setName(string n)
 {
-    this->name = name;
+    name = n;
 }
 
-void Restaurant::setCuisine(string cuisine)
+void Restaurant::setCuisine(string c)
 {
-    this->cuisine = cuisine;
+    cuisine = c;
 }
 
-void Restaurant::setLocation(string location)
+void Restaurant::setLocation(string l)
 {
-    this->location = location;
+    location = l;
 }
 
-void Restaurant::setOpeningHour(int openingHour)
+void Restaurant::setOpeningHour(int oh)
 {
-    this->openingHour = openingHour;
+    openingHour = oh;
 }
 
-void Restaurant::setClosingHour(int closingHour)
+void Restaurant::setClosingHour(int ch)
 {
-    this->closingHour = closingHour;
+    closingHour = ch;
 }
 
-void Restaurant::setRating(double rating)
+void Restaurant::setRating(double r)
 {
-    this->rating = rating;
+    rating = r;
 }
 
-void Restaurant::setCost(double cost)
+void Restaurant::setCost(double c)
 {
-    this->cost = cost;
+    cost = c;
 }
 
-void Restaurant::setPhoneNumber(double phoneNumber)
+void Restaurant::setPhoneNumber(double phoneNumb)
 {
-    this->phoneNumber = phoneNumber;
+    phoneNumber = phoneNumb;
 }
 
 

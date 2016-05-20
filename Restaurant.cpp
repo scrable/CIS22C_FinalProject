@@ -7,7 +7,10 @@ Restaurant::Restaurant()
     location = "default location";
     openingHour = 0;
     closingHour = 0;
+<<<<<<< HEAD
     phoneNumber = 0;
+=======
+>>>>>>> parent of cf342bb... simplify setter functions
     rating = 0.0;
     cost = 0.0;
 }
@@ -52,44 +55,48 @@ int Restaurant::getPhoneNumber()
     return phoneNumber;
 }
 
-void Restaurant::setName(string n)
+void Restaurant::setName(string name)
 {
-    name = n;
+    this->name = name;
 }
 
-void Restaurant::setCuisine(string c)
+void Restaurant::setCuisine(string cuisine)
 {
-    cuisine = c;
+    this->cuisine = cuisine;
 }
 
-void Restaurant::setLocation(string l)
+void Restaurant::setLocation(string location)
 {
-    location = l;
+    this->location = location;
 }
 
-void Restaurant::setOpeningHour(int oh)
+void Restaurant::setOpeningHour(int openingHour)
 {
-    openingHour = oh;
+    this->openingHour = openingHour;
 }
 
-void Restaurant::setClosingHour(int ch)
+void Restaurant::setClosingHour(int closingHour)
 {
-    closingHour = ch;
+    this->closingHour = closingHour;
 }
 
-void Restaurant::setRating(double r)
+void Restaurant::setRating(double rating)
 {
-    rating = r;
+    this->rating = rating;
 }
 
-void Restaurant::setCost(double c)
+void Restaurant::setCost(double cost)
 {
-    cost = c;
+    this->cost = cost;
 }
 
+<<<<<<< HEAD
 void Restaurant::setPhoneNumber(int phoneNumb)
+=======
+void Restaurant::setPhoneNumber(double phoneNumber)
+>>>>>>> parent of cf342bb... simplify setter functions
 {
-    phoneNumber = phoneNumb;
+    this->phoneNumber = phoneNumber;
 }
 
 

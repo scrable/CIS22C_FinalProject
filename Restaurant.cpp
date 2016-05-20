@@ -8,7 +8,10 @@ Restaurant::Restaurant()
     openingHour = 0;
     closingHour = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
     phoneNumber = 0;
+=======
+>>>>>>> parent of cf342bb... simplify setter functions
 =======
 >>>>>>> parent of cf342bb... simplify setter functions
     rating = 0.0;
@@ -91,7 +94,11 @@ void Restaurant::setCost(double cost)
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 void Restaurant::setPhoneNumber(int phoneNumb)
+=======
+void Restaurant::setPhoneNumber(double phoneNumber)
+>>>>>>> parent of cf342bb... simplify setter functions
 =======
 void Restaurant::setPhoneNumber(double phoneNumber)
 >>>>>>> parent of cf342bb... simplify setter functions

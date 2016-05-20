@@ -6,21 +6,18 @@
     This includes the Search, List, and Statistics portions mentioned in the Menu Requirements
 */
 
-//#include "Restaurant.h"
 #include "BST.h"
 #include <string>
-
-using namespace std;
-
 
 class Report
 {
 private:
     BST<string>* uniqueBSTDatabase;
+    BST<string>* secondaryBSTDatabase;
 
 public:
     Report();
-    Report(BST<string>* database);
+    Report(BST<string>* uniqueBSTdatabase, BST<string>* secondaryBSTDatabase);
 
     /* Searching functions */
 

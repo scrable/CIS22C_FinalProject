@@ -1,12 +1,5 @@
-/*
-    Corey Russ
-    Lab 5
-    CIS 22c
-    BST.h
-*/
-
-#ifndef BST_H_
-#define BST_H_
+#ifndef _BST_H
+#define _BST_H
 
 #include <cstddef>
 #include <string>
@@ -25,11 +18,11 @@ class BST
         {
                 Node* left;
                 Node* right;
-               // bstdata data;
-                Restaurant rest;
+                bstdata nameOrCuisine;
+                int phoneNumber;
 
-                Node(): left(NULL), right(NULL){}
-                Node(Restaurant newRest): left(NULL), right(NULL), rest(newRest){}
+                Node(): left(NULL), right(NULL), nameOrCuisine(""), phoneNumber(0){}
+                Node(bstdata nameOrCuisine,int phoneNumber): left(NULL), right(NULL), nameOrCuisine(nameOrCuisine), phoneNumber(phoneNumber){}
         };
 
         typedef struct Node* Nodeptr;
@@ -39,110 +32,35 @@ class BST
 
                     /**Private helper functions*/
 
-        void insert_value(Nodeptr root, Restaurant rest);
-
-        //private helper function for insert
-
-        //recursively inserts a value into the BST
-
-        void inOrderPrint(Nodeptr root, ofstream &fout);
-
-        //private helper function for inOrderPrint
-
-        //recursively prints tree values in order from smallest to largest
-
+        void insert_value(Nodeptr root, bstdata nameOrCuisine, int phoneNumber);
+        void inOrderPrint(Nodeptr root);
         void preOrderPrint(Nodeptr root, ofstream &fout);
-
-        //private helper function for preOrderPrint
-
-        //recursively prints tree values in preorder
-
-
         void postOrderPrint(Nodeptr root, ofstream &fout);
-
-        //private helper function for postOrderPrint
-
-        //recursively prints tree values according in postorder
-
         bool containsValue(Nodeptr root, bstdata value);
-
-        bstdata findMin(Nodeptr root);
-
         Nodeptr remove(Nodeptr root, bstdata value);
-
-        void copyHelper(const Nodeptr origRoot, Nodeptr &root);
-
         void deleteTree(Nodeptr root);
-
-        bstdata findMax(Nodeptr root);
-
         int getSize(Nodeptr root);
-
         int getHeight(Nodeptr root);
-
-
     public:
         BST();
-
-        //Instantiates a new BST
-
-        //post: a new BST object
-
-        BST(const BST &BST);
-
         ~BST();
-
         bool is_empty();
+        void insert(bstdata nameOrCuisine, int phoneNumber);
 
-        //determines whether the BST is empty
-
-        void insert(Restaurant rest);
-
-        //inserts a new value into the BST
-
-        //post: a new value inserted into the BST
-
+        //MUST use exception when calling
+        //otherwise will crash when calling if tree is empty
         bstdata getRoot();
 
-        //returns the value stored at the root of the BST
-
-        //pre: the BST is not empty
-
-        void inOrderPrint(ofstream &fout);
-
-        //calls the inOrderPrint function to print out the values
-
-        //stored in the BST
-
-
+        void inOrderPrint();
         void preOrderPrint(ofstream &fout);
-
-        //calls the reOrderPrint function to print out the values
-
-        //stored in the BST
-
-
         void postOrderPrint(ofstream &fout);
-
-        //calls the postOrderPrint function to print out the values
-
-        //stored in the BST
-
-        //more functions to be added here!
-
         bool search(bstdata value);
-
-        bstdata minimum();
-
         void remove(bstdata value);
-
-        bstdata maximum();
-
         bool isEmpty();
-
         int getSize();
-
         int getHeight();
+
+
 
 };
 
@@ -150,15 +68,6 @@ template <class bstdata>
 BST<bstdata>::BST()
 {
     root = NULL;
-}
-
-template <class bstdata>
-BST<bstdata>::BST(const BST &BST)
-{
-    if(!BST.root)
-        root = NULL;
-    else copyHelper(BST.root, root);
-
 }
 
 template <class bstdata>
@@ -179,51 +88,39 @@ void BST<bstdata>::deleteTree(Nodeptr root)
 }
 
 template <class bstdata>
-void BST<bstdata>::copyHelper(const Nodeptr origRoot, Nodeptr &root)
-{
-    if(origRoot)
-    {
-        root = new Node(origRoot->data);
-        copyHelper(origRoot->left, root->left);
-        copyHelper(origRoot->right, root->right);
-    }
-}
-
-template <class bstdata>
-void BST<bstdata>::insert(Restaurant rest)
+void BST<bstdata>::insert(bstdata nameOrCuisine, int phoneNumber)
 {
     if (root == NULL)
-
     {
-        root = new Node(rest); //if the tree is empty insert the value at the root
+        root = new Node(nameOrCuisine, phoneNumber); //if the tree is empty insert the value at the root
 
     }
     else
-        insert_value(root, rest); //otherwise call the helper function, passing it the root
+        insert_value(root, nameOrCuisine, phoneNumber); //otherwise call the helper function, passing it the root
 
 }
 
 template <class bstdata>
-void BST<bstdata>::insert_value(Nodeptr root, Restaurant rest)
+void BST<bstdata>::insert_value(Nodeptr root, bstdata nameOrCuisine, int phoneNumber)
 {
 
     //change the root->rest.getName() later to
     // operator== overload
-    if(rest.getName() == root->rest.getName())
+    if(nameOrCuisine == root->nameOrCuisine)
         return;
-    else if(rest.getName() < root->rest.getName())
+    else if(nameOrCuisine < root->nameOrCuisine)
     {
         if(root->left == NULL)
-            root->left = new Node(rest);
+            root->left = new Node(nameOrCuisine, phoneNumber);
         else
-            insert_value(root->left, rest);
+            insert_value(root->left, nameOrCuisine, phoneNumber);
     }
     else
     {
         if(root->right == NULL)
-            root->right = new Node(rest);
+            root->right = new Node(nameOrCuisine, phoneNumber);
         else
-            insert_value(root->right, rest);
+            insert_value(root->right, nameOrCuisine, phoneNumber);
     }
 }
 
@@ -231,31 +128,31 @@ template <class bstdata>
 bstdata BST<bstdata>::getRoot()
 {
     if(root)
-       return root->rest.getName();
+       return root->nameOrCuisine;
     else
     {
-        cout << "getRoot(): The tree is empty.";
-        exit(-1);
+        throw "The tree is empty";
     }
 }
 
 
 template <class bstdata>
-void BST<bstdata>::inOrderPrint(Nodeptr root, ofstream &fout)
+void BST<bstdata>::inOrderPrint(Nodeptr root)
 {
     if(root)
     {
-        inOrderPrint(root->left, fout);
-        fout << root->data << " ";
-        inOrderPrint(root->right, fout);
+        inOrderPrint(root->left);
+        //fout << root->data << " ";
+        cout << root->nameOrCuisine;
+        inOrderPrint(root->right);
     }
 }
 
 template <class bstdata>
-void BST<bstdata>::inOrderPrint(ofstream &fout)
+void BST<bstdata>::inOrderPrint()
 {
-    inOrderPrint(root, fout);
-    fout << endl;
+    inOrderPrint(root);
+    cout << endl;
 }
 
 template <class bstdata>
@@ -324,46 +221,6 @@ bool BST<bstdata>::search(bstdata value)
     else if(root)
         return containsValue(root, value);
     else return false;
-}
-
-template <class bstdata>
-bstdata BST<bstdata>::minimum()
-{
-    if (root == NULL)
-    {
-        cout << "Minimum: Tree is empty" << endl;
-        //will need to include cstdlib for exit below
-            exit(-1);
-    }
-    else return findMin(root);
-}
-
-template <class bstdata>
-bstdata BST<bstdata>::findMin(Nodeptr root)
-{
-    while(root->left)
-        root = root->left;
-    return root->data;
-}
-
-template <class bstdata>
-bstdata BST<bstdata>::maximum()
-{
-    if (root == NULL)
-    {
-        cout << "Maximum: Tree is empty" << endl;
-        //will need to include cstdlib for exit below
-            exit(-1);
-    }
-    else return findMax(root);
-}
-
-template <class bstdata>
-bstdata BST<bstdata>::findMax(Nodeptr root)
-{
-    while(root->right)
-        root = root->right;
-    return root->data;
 }
 
 template <class bstdata>
@@ -475,4 +332,10 @@ int BST<bstdata>::getHeight()
         height = getHeight(root);
     return height;
 }
+
+
 #endif
+
+
+
+

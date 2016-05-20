@@ -14,22 +14,30 @@ using namespace std;
 
 MainMenu::MainMenu()
 {
-    //create a restaurantDatabase object to call the database functions
-    restaurantDatabase = new RestaurantDatabase();
+
 
     //create a pointer to the unique key BST
     uniqueBSTDatabase = new BST<string>();
+
+    //create a pointer to the secondary key
+    secondaryBSTDatabase = new BST<string>();
+
+     //create a pointer to the hash table
+     //when adding the hash here, make sure to add it to the restaurantDatabase assignment below
+     //as well as the constructor for the RestaurantDatabase
+
+    //create a restaurantDatabase object to call the database functions
+    restaurantDatabase = new RestaurantDatabase(uniqueBSTDatabase, secondaryBSTDatabase);
 
     //will need to pass in database as an argument to Report() once it is added
     //will also need a new constructor for this to happen
     //this report call to the constructor will create a report object to be used by the main menu object
     //report will be used for search, list, and statistics
-    report = Report(uniqueBSTDatabase);
+    report = Report(uniqueBSTDatabase, secondaryBSTDatabase);
 
-   //create a pointer to the secondary key
-   /// secondaryBSTDatabase = new BST<string>();
 
-   //create a pointer to the hash table
+
+
 
 
 }
@@ -44,8 +52,7 @@ void MainMenu::showMainMenu()
 	int choice = 0;
 	do
 	{
-	    //keep this commented out until we get closer to finishing the project
-        //system(CLEAR);
+	    system(CLEAR);
 
 		//show the mainMenu and get the choice
 		cout << "\t\tRestaurants\n\t\tMain Menu\n\n";
@@ -63,7 +70,7 @@ void MainMenu::showMainMenu()
 		if (choice == 1)
 		{
 			//run add new data menu
-			restaurantDatabase->addRestaurant();
+			restaurantDatabase->addRestaurantMenu();
 		}
 		else if (choice == 2)
 		{

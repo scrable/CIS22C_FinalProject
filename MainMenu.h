@@ -12,6 +12,10 @@ private:
 
     //contains a pointer to the unique key BST
     BST<string>* uniqueBSTDatabase;
+
+    //contains a pointer to the secondary key BST
+    BST<string>* secondaryBSTDatabase;
+
 public:
     //constructor
     MainMenu();

@@ -194,7 +194,6 @@ void RestaurantDatabase::addRestaurantMenu()
 		    cin.clear();
 			cin.ignore(1000, '\n');
 			cout << "Invalid response.\n\n";
-
 		}
     }
     cout << "What is the cuisine of the restaurant? ";

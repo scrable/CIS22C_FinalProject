@@ -7,7 +7,7 @@ Restaurant::Restaurant()
     location = "default location";
     openingHour = 0;
     closingHour = 0;
-    phoneNumber = 0.0;
+    phoneNumber = 0;
     rating = 0.0;
     cost = 0.0;
 }
@@ -47,7 +47,7 @@ double Restaurant::getCost()
     return cost;
 }
 
-double Restaurant::getPhoneNumber()
+int Restaurant::getPhoneNumber()
 {
     return phoneNumber;
 }
@@ -87,7 +87,7 @@ void Restaurant::setCost(double c)
     cost = c;
 }
 
-void Restaurant::setPhoneNumber(double phoneNumb)
+void Restaurant::setPhoneNumber(int phoneNumb)
 {
     phoneNumber = phoneNumb;
 }

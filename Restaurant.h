@@ -17,7 +17,7 @@ using namespace std;
      string location;
      int openingHour;
      int closingHour;
-     double phoneNumber;
+     int phoneNumber;
      double rating;
      double cost;
  public:
@@ -30,7 +30,7 @@ using namespace std;
      string getLocation();
      int getOpeningHour();
      int getClosingHour();
-     double getPhoneNumber();
+     int getPhoneNumber();
      double getRating();
      double getCost();
 
@@ -43,7 +43,7 @@ using namespace std;
      void setClosingHour(int closingHour);
      void setRating(double rating);
      void setCost(double cost);
-     void setPhoneNumber(double phoneNumber);
+     void setPhoneNumber(int phoneNumber);
 
      friend ostream& operator<<(ostream& out, Restaurant& restaurant);
 

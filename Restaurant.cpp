@@ -8,6 +8,19 @@ Restaurant::Restaurant()
     phoneNumber = 0;
     openingHour = 0;
     closingHour = 0;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    phoneNumber = 0;
+=======
+>>>>>>> parent of cf342bb... simplify setter functions
+=======
+>>>>>>> parent of cf342bb... simplify setter functions
+=======
+>>>>>>> parent of cf342bb... simplify setter functions
+=======
+>>>>>>> parent of cf342bb... simplify setter functions
     rating = 0.0;
     cost = 0.0;
 }
@@ -47,7 +60,7 @@ double Restaurant::getCost()
     return cost;
 }
 
-double Restaurant::getPhoneNumber()
+int Restaurant::getPhoneNumber()
 {
     return phoneNumber;
 }
@@ -87,7 +100,23 @@ void Restaurant::setCost(double cost)
     this->cost = cost;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+void Restaurant::setPhoneNumber(int phoneNumb)
+=======
 void Restaurant::setPhoneNumber(double phoneNumber)
+>>>>>>> parent of cf342bb... simplify setter functions
+=======
+void Restaurant::setPhoneNumber(double phoneNumber)
+>>>>>>> parent of cf342bb... simplify setter functions
+=======
+void Restaurant::setPhoneNumber(double phoneNumber)
+>>>>>>> parent of cf342bb... simplify setter functions
+=======
+void Restaurant::setPhoneNumber(double phoneNumber)
+>>>>>>> parent of cf342bb... simplify setter functions
 {
     this->phoneNumber = phoneNumber;
 }

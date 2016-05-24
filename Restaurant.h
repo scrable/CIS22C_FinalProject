@@ -20,6 +20,8 @@ class Restaurant
      double phoneNumber;
      double rating;
      double cost;
+     ///kkk
+     ///lll
  public:
      //default constructor
      Restaurant();

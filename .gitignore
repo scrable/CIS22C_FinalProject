@@ -3,3 +3,6 @@
 bin/Debug/CIS22C_FinalProject.exe
 *.depend
 *.layout
+.cproject
+
+.project

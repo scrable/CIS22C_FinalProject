@@ -29,25 +29,9 @@ HashTable::~HashTable()
 void HashTable::addItem(Restaurant rest)
 {
     Nodeptr N = new Node(rest);
-    int index = hash(rest.getName());
+    int index = hash(rest.getName(), rest.getPhoneNumber());
 
-    //check for duplicate restaurant
-    //dont add the restaurant if all parameters are equal
-    if
-    (
-       Table[index]->rest.getName() == rest.getName()
-       && Table[index]->rest.getCuisine() == rest.getCuisine()
-       && Table[index]->rest.getLocation() == rest.getLocation()
-       && Table[index]->rest.getOpeningHour() == rest.getOpeningHour()
-       && Table[index]->rest.getClosingHour() == rest.getClosingHour()
-       && Table[index]->rest.getPhoneNumber() == rest.getPhoneNumber()
-       && Table[index]->rest.getRating() == rest.getRating()
-       && Table[index]->rest.getCost() == rest.getCost()
-    )
-    {
-        return;
-    }
-    if(Table[index]->rest.getName() == "default name")
+    if(Table[index]->rest.getName() == "")
         Table[index] = N;
     else
     {
@@ -58,52 +42,27 @@ void HashTable::addItem(Restaurant rest)
     }
 }
 
-int HashTable::hash(string key)
+int HashTable::hash(string key, double phoneNum)
 {
-    int index, sum = 0, keyLength = 0;
-    keyLength = key.length();
-    for(int i = 0; i < keyLength; i++)
+    int index, sum = 0;
+    unsigned int phoneN = (int)phoneNum;
+    for(int i = 0; i < key.length(); i++)
         sum += (int) key[i]; //summing the ASCII values for each character in the string
-    index = sum % TABLE_SIZE; //dividing the summed ASCII values by 35 && storing remainder as my index
+    index = (sum+phoneN) % TABLE_SIZE; //dividing the summed ASCII values by 35 && storing remainder as my index
     return index;
 }
-
-//int HashTable::numItemsAtIndex(int index)
-//{
-//    Nodeptr temp = Table[index];
-//    int count = 0;
-//    if(temp->title == "")
-//        return count;
-//    else
-//        while(temp)
-//        {
-//            count++;
-//            temp = temp->next;
-//        }
-//    return count;
-//}
 
 void HashTable::printTable()
 {
     for(int i = 0; i < TABLE_SIZE; i++)
     {
-        if(Table[i]->rest.getName() != "default name")
-        {
-            cout << "BUCKET NUMBER: " << i;
-            cout << "\n------------------------------------" << endl << endl;
-            cout << Table[i]->rest << endl;
-            if(Table[i]->next)
-            {
-                Nodeptr temp = Table[i];
-                while(temp->next)
-                {
-                    cout << temp->next->rest << endl;
-                    temp = temp->next;
-                }
-            }
-        }
+    	cout << "------------------------------------" << endl;
+    	cout << "Index " << i << endl;
+        cout << Table[i]->rest;
+        cout << "Number Values at this Index: " << numItemsAtIndex(i) << endl;
     }
-    cout << "\n------------------------------------" << endl << endl;
+    cout << "------------------------------------" << endl;
+
 }
 
 void HashTable::printTableToFile(ofstream &fout)
@@ -149,92 +108,67 @@ void HashTable::printTableToFile(ofstream &fout)
     }
 }
 
-//int HashTable::findAuthor(string title)
-//{
-//    int index = hash(title);
-//    Nodeptr temp = Table[index];
-//    while(temp)
-//    {
-//        if(temp->title == title)
-//        {
-//             cout << "The author of " << title << " is " << temp->author;
-//             return index;
-//        }
-//        else
-//            temp = temp->next;
-//    }
-//    cout << "The title is not stored in the database." << endl;
-//    return -1;
-//}
-
-//void HashTable::printBucket(int index)
-//{
-//    Nodeptr temp = Table[index];
-//    if(temp->title != "")
-//    {
-//        cout << "\n\nThe values stored at index " << index << " are:" << endl << endl;
-//        while(temp)
-//        {
-//            cout << "Title: " << temp->title << endl;
-//            cout << "Author: " << temp->author << endl;
-//            cout << fixed << setprecision(0);
-//            cout << "ISBN: " << temp->isbn << endl << endl;
-//            temp = temp->next;
-//        }
-//    }
-//    else
-//        cout << "The bucket at index "<< index << " is empty." << endl;
-//}
-
-void HashTable::removeItem(string key)
+int HashTable::findRestaurant(string name, double phoneNum)
 {
-    int index = hash(key);
+	int index = hash(name, phoneNum);
+	Nodeptr temp = Table[index];
+	while(temp != NULL)
+	{
+		if(temp->rest.getName() == name && temp->rest.getPhoneNumber() == phoneNum)
+		{
+			cout << temp->rest;
+			return index;
+		}
+		temp = temp->next;
+	}
+	cout << "findRestaurant(): The restaurant is not stored in the database." << endl;
+	return -1;
+}
+
+void HashTable::removeItem(string name, double phoneNum)
+{
+    int index = hash(name, phoneNum);
     Nodeptr temp = Table[index];
 
-
-    if(!temp)
+    if(temp->rest.getName() == "")
     {
-        cout << "Cannot remove the item. The bucket is empty.";
-    }
-    else if(temp && !temp->next)
+    	cout << "1removeItem(): Cannot remove. The book was not found in the table." << endl;
+    	return;
+   	}
+    else if(temp->rest.getName() != "" && !temp->next)
     {
-        if(key == temp->rest.getName())
+        if(name == temp->rest.getName() && phoneNum == temp->rest.getPhoneNumber())
         {
             delete temp;
             Table[index] = new Node();
         }
         else
-            cout << "Could not find " << key << endl;
-
+		{
+			cout << "2removeItem(): Cannot remove. The book was not found in the table." << endl;
+			return;
+		}
     }
-    else if(temp && temp->next)
+    else
     {
-        if(key == temp->rest.getName())
+        if(name == temp->rest.getName() && phoneNum == temp->rest.getPhoneNumber())
         {
             Table[index] = temp->next;
             delete temp;
         }
         else
         {
-            while(temp->next->rest.getName() != key && temp->next)
+            while(temp->next != NULL)
             {
-                    temp = temp->next;
+            	if(temp->next->rest.getName() == name && temp->next->rest.getPhoneNumber() == phoneNum)
+            	{
+            		Nodeptr temp2 = temp->next;
+            		temp->next = temp2->next;
+            		delete temp2;
+            		return;
+            	}
+            	temp = temp->next;
             }
-            if(temp->next->rest.getName() == key)
-            {
-                if(temp->next->next)
-                {
-                    delete temp->next;
-                    temp->next = temp->next->next;
-                }
-                else
-                {
-                    delete temp->next;
-                    temp->next = NULL;
-                }
-            }
-            else
-                cout << "Could not find " << key;
+            cout << "3removeItem(): Cannot remove. The book was not found in the table." << endl;
         }
     }
 }
@@ -244,4 +178,28 @@ int HashTable::getTableSize()
     return TABLE_SIZE;
 }
 
+int HashTable::numItemsAtIndex(int index)
+{
+	Nodeptr temp = Table[index];
+	int count = 0;
+	if(temp->rest.getName() == "")
+		return count;
+	while(temp != NULL)
+	{
+		count++;
+		temp = temp->next;
+	}
+	return count;
+}
+
+void HashTable::printBucket(int index)
+{
+	Nodeptr temp = Table[index];
+	cout << "Values Stored at Bucket " << index << ":" << endl << endl;
+	while(temp != NULL)
+	{
+		cout << temp->rest << endl;
+		temp = temp->next;
+	}
+}
 

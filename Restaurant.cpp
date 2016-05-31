@@ -126,3 +126,15 @@ void Restaurant::setAll(string name, string cuisine, string location, int openin
     this->rating = rating;
     this->phoneNumber = phoneNumber;
 }
+
+Restaurant::Restaurant(string nam, string cui, string loc, int openHour, int closeHour, double phoneNum, double rate, double c)
+{
+	name = nam;
+	cuisine = cui;
+	location = loc;
+	openingHour = openHour;
+	closingHour = closeHour;
+	phoneNumber = phoneNum;
+	rating = rate;
+	cost = c;
+}

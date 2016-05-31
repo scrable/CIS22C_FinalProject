@@ -18,14 +18,14 @@ public:
     //returns the hash value for the given key
     //the hash value is the sum of
     //the ASCII values of each character % the table size
-    int hash(string key);
+    int hash(string key, double phoneNum);//
 
     //inserts a new item into the table
     //calls the hash function on the key title to determine the correct bucket
-    void addItem(Restaurant rest);
+    void addItem(Restaurant rest);//
 
     //removes the item with the given key
-    void removeItem(string key);
+    void removeItem(string key, double phoneNum);//
 
     //Helper function to printTable
     //Counts the number of items in each bucket
@@ -43,7 +43,7 @@ public:
     //Searches for a restaurant in the table using the key entered by the user
     //returns the index under which the restaurant is stored
     //returns -1 if the restaurant is not found
-    int findRestaurant(Restaurant rest);
+    int findRestaurant(string name, double phoneNum);//
 
     //need a way to get table size for looping
     int getTableSize();
@@ -60,7 +60,7 @@ private:
 
     typedef struct Node* Nodeptr;
 
-    static const int TABLE_SIZE = 60;
+    static const int TABLE_SIZE = 10;
     Nodeptr Table[TABLE_SIZE];
 
 };

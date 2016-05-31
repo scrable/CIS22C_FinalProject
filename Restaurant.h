@@ -24,7 +24,7 @@ class Restaurant
  public:
      //default constructor
      Restaurant();
-
+     Restaurant(string nam, string cui, string loc, int openHour, int closeHour, double phoneNum, double rate, double c);
      /* getters */
 
      string getName();

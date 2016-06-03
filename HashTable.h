@@ -47,6 +47,7 @@ public:
     //need a way to get table size for looping
     int getTableSize();
 
+    bool affordableRestaurant(int cost);
 
 private:
 

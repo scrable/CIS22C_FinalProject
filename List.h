@@ -40,22 +40,9 @@ public:
     //Destructor. Frees memory allocated to the list
     //Postcondition: memory previously allocated is free
 
-    /**Accessors*/
-
-    listitem get_head();
-    //Returns the first element in the list
-    //Precondition: list must not be empty
-
-    listitem get_tail();
-    //Returns the last element in the list
-    //Precondition: list must not be empty
-
     listitem get_cursor();
     //Returns the element pointed to by the iterator
     //Precondition: list must not be empty
-
-    bool is_empty();
-    //Determines whether a list is empty.
 
     bool off_end();
     //Determines if the iterator is off the end of the list (i.e. whether cursor is NULL)
@@ -172,31 +159,9 @@ void List<listitem>::print()
 }
 
 template <class listitem>
-bool List<listitem>::is_empty()
-{
-    return (length==0);
-}
-
-template <class listitem>
 int List<listitem>::get_length()
 {
     return length;
-}
-
-template <class listitem>
-listitem List<listitem>::get_head()
-{
-    if(length == 0)
-    {
-        cout << "get_head(): The list is empty.\n";
-    }
-    else return head->data;
-}
-
-template <class listitem>
-listitem List<listitem>::get_tail()
-{
-    return tail->data;
 }
 
 template <class listitem>

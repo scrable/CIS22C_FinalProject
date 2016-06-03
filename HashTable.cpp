@@ -241,7 +241,7 @@ bool HashTable::affordableRestaurant(int cost)
         Nodeptr temp= Table[i];
         while (temp != NULL)
         {
-            if (temp->rest.getCost() <= cost &&temp->rest.getName() != "default name"  )
+            if (temp->rest.getCost() <= cost && temp->rest.getName() != "default name")
             {
                 found = true;
                 cout << temp->rest << endl;

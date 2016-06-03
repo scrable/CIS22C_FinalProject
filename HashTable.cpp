@@ -117,23 +117,6 @@ int HashTable::findRestaurant(string key)
     return -1;
 }
 
-void HashTable::printBucket(int index)
-{
-    Nodeptr temp = Table[index];
-    if(temp)
-    {
-        int i = 1;
-        while(temp)
-        {
-            cout << "Restaurant number: " << i << endl << temp->rest << endl;
-            temp = temp->next;
-            i++;
-        }
-    }
-    else
-        cout << "The bucket at index "<< index << " is empty." << endl;
-}
-
 Restaurant HashTable::getRestaurant(int num, int index, string tempName)
 {
     Nodeptr temp = Table[index];

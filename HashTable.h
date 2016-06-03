@@ -30,13 +30,15 @@ public:
     //outputs the current hash table to a file
     void printTableToFile(ofstream &fout);
 
-    //Prints all items stored at a single bucket
-    void printBucket(int index);
-
+    //prints all restaurants in a bucket that match tempName
+    //returns the amount of matches as int
+    //0 if not found
     int printRest(int index, string tempName);
 
+    //returns the number of items in a bucket
     int numItemsAtIndex(int index);
 
+    //prints the entire hash table
     void printTable();
 
     //returns a specific restaurantin a specific bucket

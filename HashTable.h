@@ -53,6 +53,8 @@ public:
     //need a way to get table size for looping
     int getTableSize();
 
+    //prints all matches of restaurants that are = || < cost
+    //returns true if one or more matches found, false if nothing found
     bool affordableRestaurant(int cost);
 
 private:

@@ -139,14 +139,11 @@ Restaurant HashTable::getRestaurant(int num, int index, string tempName)
     Nodeptr temp = Table[index];
 
     int i = 0;
+    cout << numItemsAtIndex(index);
 
     //if restaurant doesn't exist
     if((!temp->next && temp->rest.getName() != tempName) || num > numItemsAtIndex(index))
     {
-        cout << "\nThe restaurant doesn't exist.";
-        cout << "\n\n\n\t\tPress any key to continue." << endl;
-        cin.ignore(1000, '\n');
-        cin.get();
         Restaurant r;
         return r;
     }
@@ -157,13 +154,20 @@ Restaurant HashTable::getRestaurant(int num, int index, string tempName)
 
     while(temp->next)
     {
+        temp = temp->next;
         if(i == num)
             break;
         else if(tempName == temp->rest.getName())// && i == num)
             i++;
     }
-    //return the currect restaurant
-    return temp->rest;
+    if(i == num)
+        //return the currect restaurant
+        return temp->rest;
+    else
+    {
+        Restaurant r;
+        return r;
+    }
 }
 
 void HashTable::removeItem(Restaurant r)

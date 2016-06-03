@@ -153,8 +153,15 @@ void RestaurantDatabase::removeRestaurantMenu()
                         cin.ignore(1000, '\n');
                         cout << "\n\n\n\t\tPress any key to continue." << endl;
                         cin.get();
+                        done = true;
                     }
-                    done = true;
+                    else
+                    {
+                        cout << "\nPlease enter a valid restaurant number.";
+                        cout << "\n\n\n\t\tPress any key to continue." << endl;
+                        cin.ignore(1000, '\n');
+                        cin.get();
+                    }
                 }
                 else if(num == -1)
                 {

@@ -33,7 +33,6 @@ private:
     void deleteTree(Nodeptr root);
     Restaurant findMin(Nodeptr root);
     void buildCuisineList(Nodeptr root, List<string> &cuisine);
-    void printCuisine(Nodeptr root, bstdata value);
     int calCuisine(string cuisine);
     void numPerCuisine(string value, Nodeptr root, int &numCuisine);
 
@@ -232,26 +231,12 @@ bool BST<bstdata>::containsCuisineValue(Nodeptr root, bstdata value)
 }
 
 template <class bstdata>
-void BST<bstdata>::printCuisine(Nodeptr root, bstdata value)
-{
-    if(root)
-    {
-        printCuisine(root->left, value);
-        if(root->rest.getCuisine() == value)
-        {
-            cout << root->rest;
-        }
-        printCuisine(root->right, value);
-    }
-}
-
-template <class bstdata>
 void BST<bstdata>::searchCuisine(bstdata value)
 {
     if(containsCuisineValue(root, value))
-        printCuisine(root, value);
+        cout << "\n------------------------------------" << endl << endl;
     else
-        cout << "not found";
+        cout << "The cuisine " << value << " could not be found." << endl;
 }
 
 template <class bstdata>

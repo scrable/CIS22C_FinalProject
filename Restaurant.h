@@ -15,9 +15,9 @@ private:
     string location;
     int openingHour;
     int closingHour;
+    int cost;
     double phoneNumber;
     double rating;
-    double cost;
 public:
     Restaurant();
 
@@ -42,7 +42,7 @@ public:
     void setRating(double rating);
     void setCost(double cost);
     void setPhoneNumber(double phoneNumber);
-    void setAll(string name, string cuisine, string location, int openingHour, int closingHour, double cost, double rating, double phoneNumber);
+    void setAll(string name, string cuisine, string location, int openingHour, int closingHour, int cost, double rating, double phoneNumber);
 
     //for outputting a restaurant
     friend ostream& operator<<(ostream& out, Restaurant& restaurant);

@@ -78,11 +78,6 @@ void RestaurantDatabase::readFile()
             throw "Failed to open " + inputDatabaseFile + " for reading.\n";
         }
 
-        //create temp variables to store data
-        //string name, cuisine, location;
-        //int openingHour, closingHour;
-        //double cost, rating, phoneNumber;
-
         //read the file in a for loop, inputting a complete restaurant object
         //to all 3 databases by calling addRestaurant
         int i = 0;
@@ -207,9 +202,9 @@ void RestaurantDatabase::addRestaurantMenu()
     string location;
     int openingHour;
     int closingHour;
+    int cost;
     double phoneNumber;
     double rating;
-    double cost;
     string alwaysOpen;
 
 
@@ -238,9 +233,9 @@ void RestaurantDatabase::addRestaurantMenu()
         done = false;
         while (!done)
         {
-            cout << "What is the cost consideration of the restaurant?\nPlease enter a number 0-4: ";
+            cout << "What is the cost consideration of the restaurant?\nPlease enter a number 1-4: ";
             cin >> cost;
-            if (cin.fail() || cost < 0 || cost > 4)
+            if (cin.fail() || cost < 1 || cost > 4)
             {
                 cin.clear();
                 cin.ignore(1000, '\n');

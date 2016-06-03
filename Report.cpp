@@ -58,7 +58,7 @@ void Report::searchMainMenu()
             cout << "\n\t    Please enter a valid selection.\n";
             cin.clear();
             cin.ignore(1000, '\n');
-            cout << "\n\t    Press return to continue.";
+            cout << "\n\t    Press any key to continue.";
             cin.get();
             choice = 0;
         }
@@ -147,7 +147,7 @@ void Report::listMainMenu()
             cout << "\n\t    Please enter a valid selection.\n";
             cin.clear();
             cin.ignore(1000, '\n');
-            cout << "\n\t    Press return to continue.";
+            cout << "\n\t    Press any key to continue.";
             cin.get();
             choice = 0;
         }
@@ -166,7 +166,7 @@ void Report::listUnsorted()
 
     cin.clear();
     cin.ignore(1000, '\n');
-    cout << "\n\t    Press return to continue.";
+    cout << "\n\t    Press any key to continue.";
     cin.get();
     return;
 }
@@ -179,7 +179,7 @@ void Report::listSortedByName()
     cout << "\n------------------------------------" << endl << endl;
     cin.clear();
     cin.ignore(1000, '\n');
-    cout << "\n\t    Press return to continue.";
+    cout << "\n\t    Press any key to continue.";
     cin.get();
     return;
 }
@@ -192,7 +192,7 @@ void Report::listSortedByCuisine()
     cout << "\n------------------------------------" << endl << endl;
     cin.clear();
     cin.ignore(1000, '\n');
-    cout << "\n\t    Press return to continue.";
+    cout << "\n\t    Press any key to continue.";
     cin.get();
     return;
 }
@@ -243,7 +243,7 @@ void Report::statisticsMainMenu()
             cout << "\n\t    Please enter a valid selection.\n";
             cin.clear();
             cin.ignore(1000, '\n');
-            cout << "\n\t    Press return to continue.";
+            cout << "\n\t    Press any key to continue.";
             cin.get();
             choice = 0;
         }
@@ -256,21 +256,28 @@ void Report::restaurantsPerCuisine()
     system(CLEAR);
     secondaryBSTDatabase->buildCuisineList();
     cin.ignore(1000, '\n');
-    cout << "\n\t    Press return to continue.";
+    cout << "\n\t    Press any key to continue.";
     cin.get();
 }
 
 void Report::restaurantsBestRating()
 {
     cin.ignore(1000, '\n');
-    cout << "\n\t    Press return to continue.";
+    cout << "\n\t    Press any key to continue.";
     cin.get();
 }
 
 void Report::affordableRestaurants()
 {
+    system(CLEAR);
+    int cost = 0;
+    cout << "What is the cost you are willing to pay? (1-4): ";
+    cin >> cost;
+
+    if(!hashTable->affordableRestaurant(cost))
+        cout << "\n\n\tNo restaurants with " << cost << " cost could be found.\n";
     cin.ignore(1000, '\n');
-    cout << "\n\t    Press return to continue.";
+    cout << "\n\t    Press any key to continue.";
     cin.get();
 }
 

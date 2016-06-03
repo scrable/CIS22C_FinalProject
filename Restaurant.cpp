@@ -148,7 +148,7 @@ istream& operator>>(istream& in, Restaurant& restaurant)
     return in;
 }
 
-void Restaurant::setAll(string name, string cuisine, string location, int openingHour, int closingHour, double cost, double rating, double phoneNumber)
+void Restaurant::setAll(string name, string cuisine, string location, int openingHour, int closingHour, int cost, double rating, double phoneNumber)
 {
     this-> name = name;
     this->cuisine = cuisine;

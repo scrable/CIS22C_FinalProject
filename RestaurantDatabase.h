@@ -48,10 +48,7 @@ public:
     //gets the current output database file name
     string getOutputDatabaseFile();
 
-    //adds a restaurant to the database
-    //need to add all restaurant members here in the function call
-    //void addRestaurant(string name, string cuisine, string location, int openingHour, int closingHour, double cost, double rating, double phoneNumber);
-
+    //adds a restaurant to all 3 databases
     void addRestaurant(Restaurant rest);
 
     //removes a restaurant from the database

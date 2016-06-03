@@ -86,8 +86,8 @@ void MainMenu::showMainMenu()
         else if (choice == 7)
         {
             system(CLEAR);
-            cout << "\n\n\t\t   Thank you for using the restaurant database!\n\n";
-            cout << "\t\t\t(Press return to continue)";
+            cout << "\n\n\t\tThank you for using the restaurant database!\n\n";
+            cout << "\t\t\tPress any key to exit.";
             cin.ignore();
             cin.get();
             return;
@@ -98,7 +98,7 @@ void MainMenu::showMainMenu()
             cout << "\n\t    Please enter a valid selection.\n";
             cin.clear();
             cin.ignore(1000, '\n');
-            cout << "\n\t    Press return to continue.";
+            cout << "\n\t    Press any key to continue.";
             cin.get();
             choice = 0;
         }
@@ -142,7 +142,7 @@ void MainMenu::fileLoadMenu()
         restaurantDatabase->readFile();
         cout << "Existing database was read from " << restaurantDatabase->getInputDatabaseFile() << "." << endl;
     }
-    cout << "\n\n\t\t(Press return to continue)";
+    cout << "\n\n\t\tPress any key to continue.";
     cin.ignore(1000, '\n');
     cin.clear();
     cin.get();
@@ -180,7 +180,7 @@ void MainMenu::fileSaveMenu()
 
     restaurantDatabase->writeFile();
     cout << "\n\n\t   The restaurant database has been written to " << restaurantDatabase->getOutputDatabaseFile() << "." << endl;
-    cout << "\n\n\t\t(Press return to continue)";
+    cout << "\n\n\t\tPress any key to continue.";
     cin.ignore(1000, '\n');
     cin.clear();
     cin.get();

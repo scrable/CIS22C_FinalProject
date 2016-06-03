@@ -113,7 +113,7 @@ int HashTable::findRestaurant(string key)
         else
             temp = temp->next;
     }
-    cout << "\nThe restaurant is not in the database.";
+    cout << "\n\tThe restaurant " << key << " is not in the database.";
     return -1;
 }
 
@@ -234,4 +234,23 @@ void HashTable::printTable()
         }
     }
     cout << "\n------------------------------------" << endl << endl;
+}
+
+bool HashTable::affordableRestaurant(int cost)
+{
+    bool found = false;
+    for(int i = 0; i < TABLE_SIZE; i++)
+    {
+        Nodeptr temp= Table[i];
+        while (temp != NULL)
+        {
+            if (temp->rest.getCost() <= cost &&temp->rest.getName() != "default name"  )
+            {
+                found = true;
+                cout << temp->rest << endl;
+            }
+            temp = temp->next;
+        }
+    }
+    return found;
 }

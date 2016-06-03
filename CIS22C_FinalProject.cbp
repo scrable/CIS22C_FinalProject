@@ -34,6 +34,7 @@
 		<Unit filename="BST.h" />
 		<Unit filename="HashTable.cpp" />
 		<Unit filename="HashTable.h" />
+		<Unit filename="List.h" />
 		<Unit filename="MainMenu.cpp" />
 		<Unit filename="MainMenu.h" />
 		<Unit filename="Report.cpp" />

@@ -139,7 +139,6 @@ Restaurant HashTable::getRestaurant(int num, int index, string tempName)
     Nodeptr temp = Table[index];
 
     int i = 0;
-    cout << numItemsAtIndex(index);
 
     //if restaurant doesn't exist
     if((!temp->next && temp->rest.getName() != tempName) || num > numItemsAtIndex(index))

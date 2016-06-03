@@ -157,7 +157,7 @@ void RestaurantDatabase::removeRestaurantMenu()
                     }
                     else
                     {
-                        cout << "\nPlease enter a valid restaurant number.";
+                        cout << "\n\tPlease enter a valid restaurant number.";
                         cout << "\n\n\n\t\tPress any key to continue." << endl;
                         cin.ignore(1000, '\n');
                         cin.get();
@@ -169,7 +169,7 @@ void RestaurantDatabase::removeRestaurantMenu()
                 }
                 else
                 {
-                    cout << "Please enter a valid restaurant number";
+                    cout << "\n\tPlease enter a valid restaurant number";
                     cout << "\n\n\n\t\tPress any key to continue." << endl;
                     cin.ignore(1000, '\n');
                     cin.get();
@@ -177,7 +177,7 @@ void RestaurantDatabase::removeRestaurantMenu()
             }
             else
             {
-                cout << "Please enter a valid restaurant number";
+                cout << "\n\tPlease enter a valid restaurant number";
                 cout << "\n\n\n\t\tPress any key to continue." << endl;
                 cin.ignore(1000, '\n');
                 cin.get();

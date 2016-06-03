@@ -179,6 +179,7 @@ void RestaurantDatabase::removeRestaurantMenu()
             {
                 cout << "\n\tPlease enter a valid restaurant number";
                 cout << "\n\n\n\t\tPress any key to continue." << endl;
+                cin.clear();
                 cin.ignore(1000, '\n');
                 cin.get();
             }

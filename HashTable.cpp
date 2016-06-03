@@ -134,24 +134,35 @@ void HashTable::printBucket(int index)
         cout << "The bucket at index "<< index << " is empty." << endl;
 }
 
-Restaurant HashTable::getRestaurant(int num, int index)
+Restaurant HashTable::getRestaurant(int num, int index, string tempName)
 {
     Nodeptr temp = Table[index];
-    for(int i = 1; i < num && temp; i++)
+
+    int i = 0;
+
+    //if restaurant doesn't exist
+    if((!temp->next && temp->rest.getName() != tempName) || num > numItemsAtIndex(index))
     {
-        //needed if num goes off the bucket edge
-        if(!temp->next)
-        {
-            cout << "\nThe restaurant doesn't exist.";
-            cout << "\n\n\n\t\tPress any key to continue." << endl;
-            cin.ignore(1000, '\n');
-            cin.get();
-            Restaurant r;
-            return r;
-        }
-        else
-            temp = temp->next;
+        cout << "\nThe restaurant doesn't exist.";
+        cout << "\n\n\n\t\tPress any key to continue." << endl;
+        cin.ignore(1000, '\n');
+        cin.get();
+        Restaurant r;
+        return r;
     }
+
+    //if the restaurant we want is the first item in the hashs index
+    if(!temp->next && temp->rest.getName() == tempName)
+        return temp->rest;
+
+    while(temp->next)
+    {
+        if(i == num)
+            break;
+        else if(tempName == temp->rest.getName())// && i == num)
+            i++;
+    }
+    //return the currect restaurant
     return temp->rest;
 }
 
@@ -253,4 +264,39 @@ bool HashTable::affordableRestaurant(int cost)
         }
     }
     return found;
+}
+
+int HashTable::printRest(int index, string tempName)
+{
+    Nodeptr temp = Table[index];
+    int count = 0;
+
+    if(temp)
+    {
+        while(temp)
+        {
+            if(tempName == temp->rest.getName())
+            {
+                count++;
+                cout << "Restaurant number: " << count << endl << temp->rest << endl;
+            }
+            temp = temp->next;
+        }
+    }
+    return count;
+}
+
+int HashTable::numItemsAtIndex(int index)
+{
+    Nodeptr temp = Table[index];
+    int count = 0;
+    if(temp->rest.getName() == "default name")
+        return count;
+    else
+        while(temp)
+        {
+            count++;
+            temp = temp->next;
+        }
+    return count;
 }

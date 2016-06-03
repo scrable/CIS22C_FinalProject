@@ -112,6 +112,8 @@ ostream& operator<<(ostream& out, Restaurant& restaurant)
     out << fixed << setprecision(0);
     out << "Cost Consideration: " << restaurant.getCost() << endl;
     out << "Phone Number: " << restaurant.getPhoneNumber() << endl;
+    //reset setfill to prevent leading 0 in other places
+    out << setfill(' ');
     return out;
 }
 

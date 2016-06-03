@@ -33,11 +33,15 @@ public:
     //Prints all items stored at a single bucket
     void printBucket(int index);
 
+    int printRest(int index, string tempName);
+
+    int numItemsAtIndex(int index);
+
     void printTable();
 
     //returns a specific restaurantin a specific bucket
     //for the remove function
-    Restaurant getRestaurant(int num, int index);
+    Restaurant getRestaurant(int num, int index, string tempName);
 
     //Searches for a restaurant in the table using the key entered by the user
     //returns the index under which the restaurant is stored

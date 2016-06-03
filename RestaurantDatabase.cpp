@@ -137,7 +137,7 @@ void RestaurantDatabase::removeRestaurantMenu()
 
             cout << endl;
             int index = hashTable->hash(tempName);
-            hashTable->printBucket(index);
+            hashTable->printRest(index, tempName);
 
             cout << "Enter the number of the restaurant you wish to remove\nor enter -1 to return to main menu: ";
             if(cin >> num)
@@ -145,7 +145,7 @@ void RestaurantDatabase::removeRestaurantMenu()
                 if(num > 0)
                 {
                     //get the restaurant that the user specifies
-                    Restaurant r = hashTable->getRestaurant(num, index);
+                    Restaurant r = hashTable->getRestaurant(num, index, tempName);
                     if(r.getName() != "default name")
                     {
                         cout << "Removing restaurant...";

@@ -148,10 +148,11 @@ void RestaurantDatabase::removeRestaurantMenu()
                     Restaurant r = hashTable->getRestaurant(num, index, tempName);
                     if(r.getName() != "default name")
                     {
-                        cout << "Removing restaurant...";
+                        system(CLEAR);
+                        cout << "\n\t\tRestaurant removed.";
                         removeRestaurant(r);
                         cin.ignore(1000, '\n');
-                        cout << "\n\n\n\t\tPress any key to continue." << endl;
+                        cout << "\n\t\tPress any key to continue." << endl;
                         cin.get();
                         done = true;
                     }
@@ -273,7 +274,7 @@ void RestaurantDatabase::addRestaurantMenu()
         done = false;
         while (!done)
         {
-            cout << "\nWhat is the phone number of the restaurant?\nPlease enter a 10 digit number ";
+            cout << "\nWhat is the phone number of the restaurant?\nPlease enter a 10 digit number: ";
             cin >> phoneNumber;
             if (cin.fail() || phoneNumber <= 0 || phoneNumber > 9999999999 || phoneNumber < 1000000000 )
             {

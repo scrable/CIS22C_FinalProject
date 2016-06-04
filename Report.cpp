@@ -317,8 +317,9 @@ void Report::affordableRestaurants()
                 cout << "\n\t    Press any key to continue.";
                 cin.get();
             }
+            else done = true;
         }
-                else
+        else
         {
             system(CLEAR);
             cout << "\n\t    Invalid cost.\n";

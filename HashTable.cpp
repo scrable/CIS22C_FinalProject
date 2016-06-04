@@ -236,6 +236,8 @@ void HashTable::printTable()
 bool HashTable::affordableRestaurant(int cost)
 {
     bool found = false;
+    cout << endl;
+
     for(int i = 0; i < TABLE_SIZE; i++)
     {
         Nodeptr temp= Table[i];
@@ -285,4 +287,25 @@ int HashTable::numItemsAtIndex(int index)
             temp = temp->next;
         }
     return count;
+}
+
+bool HashTable::findRestaurantRating(double rating)
+{
+    bool found = false;
+    cout << endl;
+
+    for(int i = 0; i < TABLE_SIZE; i++)
+    {
+        Nodeptr temp= Table[i];
+        while (temp != NULL)
+        {
+            if (temp->rest.getRating() <= rating && temp->rest.getRating() != -1)
+            {
+                found = true;
+                cout << temp->rest << endl;
+            }
+            temp = temp->next;
+        }
+    }
+    return found;
 }

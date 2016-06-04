@@ -57,6 +57,8 @@ public:
     //returns true if one or more matches found, false if nothing found
     bool affordableRestaurant(int cost);
 
+    bool findRestaurantRating(double rating);
+
 private:
 
     struct Node

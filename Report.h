@@ -3,6 +3,7 @@
 
 #include "BST.h"
 #include "HashTable.h"
+#include <math.h>
 #include <string>
 
 class Report

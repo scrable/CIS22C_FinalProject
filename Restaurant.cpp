@@ -8,8 +8,8 @@ Restaurant::Restaurant()
     phoneNumber = 0;
     openingHour = 0;
     closingHour = 0;
-    rating = 0.0;
-    cost = 0.0;
+    rating = -1.0;
+    cost = 0;
 }
 
 string Restaurant::getName()

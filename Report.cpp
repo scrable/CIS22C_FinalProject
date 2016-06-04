@@ -262,6 +262,37 @@ void Report::restaurantsPerCuisine()
 
 void Report::restaurantsBestRating()
 {
+    double rating = 0;
+    bool done = false;
+    while(!done)
+    {
+        system(CLEAR);
+        cout << "What rating are you willing to accept? (0.5-5.0): ";
+        if(cin >> rating)
+        {
+            if(fmod(rating, .5) != 0 || rating < 0 || rating > 5)
+            {
+                system(CLEAR);
+                cout << "\n\t\tInvalid rating." << endl;
+                cin.ignore(1000, '\n');
+                cout << "\n\t    Press any key to continue.";
+                cin.get();
+            }
+            else done = true;
+        }
+        else
+        {
+            system(CLEAR);
+            cout << "\n\t    Invalid rating.\n";
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "\n\t    Press any key to continue.";
+            cin.get();
+        }
+    }
+
+    if(!hashTable->findRestaurantRating(rating))
+        cout << "\n\n\tNo restaurants with a rating of " << rating << " or lower could be found.\n";
     cin.ignore(1000, '\n');
     cout << "\n\t    Press any key to continue.";
     cin.get();
@@ -269,13 +300,37 @@ void Report::restaurantsBestRating()
 
 void Report::affordableRestaurants()
 {
-    system(CLEAR);
     int cost = 0;
-    cout << "What is the cost you are willing to pay? (1-4): ";
-    cin >> cost;
+    bool done = false;
+    while(!done)
+    {
+        system(CLEAR);
+        cout << "What is the cost you are willing to pay? (1-4): ";
+        if (cin >> cost)
+        {
+            if(cost < 1 || cost > 4)
+            {
+                system(CLEAR);
+                cout << "\n\t    Invalid cost.\n";
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cout << "\n\t    Press any key to continue.";
+                cin.get();
+            }
+        }
+                else
+        {
+            system(CLEAR);
+            cout << "\n\t    Invalid cost.\n";
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "\n\t    Press any key to continue.";
+            cin.get();
+        }
+    }
 
     if(!hashTable->affordableRestaurant(cost))
-        cout << "\n\n\tNo restaurants with " << cost << " cost could be found.\n";
+        cout << "\n\n\tNo restaurants with " << cost << " or lower cost could be found.\n";
     cin.ignore(1000, '\n');
     cout << "\n\t    Press any key to continue.";
     cin.get();

@@ -257,9 +257,9 @@ void RestaurantDatabase::addRestaurantMenu()
         done = false;
         while (!done)
         {
-            cout << "\nWhat is the rating of the restaurant?\nPlease enter a number 0-5: ";
+            cout << "\nWhat is the rating of the restaurant?\nPlease enter a number 0.0-5.0: ";
             cin >> rating;
-            if (cin.fail() || rating < 0 || rating > 5)
+            if (cin.fail() || rating < 0 || rating > 5 || fmod(rating, .5) != 0)
             {
                 cin.clear();
                 cin.ignore(1000, '\n');

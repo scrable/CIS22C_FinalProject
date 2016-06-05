@@ -121,7 +121,7 @@ Restaurant HashTable::getRestaurant(int num, int index, string tempName)
 {
     Nodeptr temp = Table[index];
 
-    int i = 0;
+    int i = 1;
 
     //if restaurant doesn't exist
     if((!temp->next && temp->rest.getName() != tempName) || num > numItemsAtIndex(index))
@@ -131,16 +131,15 @@ Restaurant HashTable::getRestaurant(int num, int index, string tempName)
     }
 
     //if the restaurant we want is the first item in the hashs index
-    if(!temp->next && temp->rest.getName() == tempName)
+    if(temp->rest.getName() == tempName && num == 1)
         return temp->rest;
 
     while(temp->next)
     {
+        i++;
         temp = temp->next;
         if(i == num)
             break;
-        else if(tempName == temp->rest.getName())// && i == num)
-            i++;
     }
     if(i == num)
         //return the currect restaurant

@@ -218,7 +218,10 @@ bool BST<bstdata>::containsCuisineValue(Nodeptr root, bstdata value)
         string temp = root->rest.getCuisine();
         for (unsigned int i =0; i < root->rest.getCuisine().length(); i++)
             temp[i] = tolower(temp[i]);
-        if(temp.find(value) != std::string::npos)
+        string valTemp = value;
+        for (unsigned int i =0; i < valTemp.length(); i++)
+            valTemp[i] = tolower(valTemp[i]);
+        if(temp.find(valTemp) != std::string::npos)
         {
             cout << "\n------------------------------------" << endl << endl;
             cout << root->rest;

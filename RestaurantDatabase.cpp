@@ -242,7 +242,7 @@ void RestaurantDatabase::addRestaurantMenu()
         done = false;
         while (!done)
         {
-            cout << "What is the cost consideration of the restaurant?\nPlease enter a number 1-4: ";
+            cout << "\nWhat is the cost consideration of the restaurant?\nPlease enter a number 1-4: ";
             cin >> cost;
             if (cin.fail() || cost < 1 || cost > 4)
             {
@@ -291,7 +291,7 @@ void RestaurantDatabase::addRestaurantMenu()
         while (!done)
         {
             //if the restaurant is always open, set openingHour and closingHour to 0000 each
-            cout << "Is this restaurant always open? (Y/N) ";
+            cout << "\nIs this restaurant always open? (Y/N) ";
             cin >> alwaysOpen;
             if (alwaysOpen == "Y" || alwaysOpen == "y")
             {
@@ -347,9 +347,9 @@ void RestaurantDatabase::addRestaurantMenu()
                 cout << "Invalid response.\n\n";
             }
         }
-        cout << "What is the cuisine of the restaurant? ";
+        cout << "\nWhat is the cuisine of the restaurant? ";
         getline(cin, cuisine);
-        cout << "What is the location of the restaurant? ";
+        cout << "\nWhat is the location of the restaurant? ";
         getline(cin, location);
 
         Restaurant rest;
@@ -368,7 +368,7 @@ void RestaurantDatabase::addRestaurantMenu()
 
             cout << rest;
             cout << "\n\nDoes this look right?" << endl << endl;
-            cout << "(y/n): ";
+            cout << "(Y/N): ";
             cin >> response;
             if (response == "y" || response == "Y")
             {
@@ -410,7 +410,7 @@ void RestaurantDatabase::addRestaurantMenu()
             {
                 system(CLEAR);
                 cout << "Would you like to try adding the restaurant again? ";
-                cout << "(y/n): ";
+                cout << "(Y/N): ";
                 cin >> response;
                 while (!done)
                 {

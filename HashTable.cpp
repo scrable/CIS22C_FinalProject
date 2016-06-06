@@ -298,7 +298,7 @@ bool HashTable::findRestaurantRating(double rating)
         Nodeptr temp= Table[i];
         while (temp != NULL)
         {
-            if (temp->rest.getRating() <= rating && temp->rest.getRating() != -1)
+            if (temp->rest.getRating() >= rating && temp->rest.getRating() != -1)
             {
                 found = true;
                 cout << temp->rest << endl;

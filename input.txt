@@ -62,38 +62,6 @@ Coffee & Tea
 1
 4.5
 4084469000
-Philz Coffee
-Coffee & Tea
-20686 Stevens Creek Blvd Cupertino, CA 95014
-600
-1830
-1
-4.5
-2222222222
-Philz Coffee
-Coffee & Tea
-20686 Stevens Creek Blvd Cupertino, CA 95014
-600
-1830
-1
-4.5
-3333333333
-Philz Coffee
-Coffee & Tea
-20686 Stevens Creek Blvd Cupertino, CA 95014
-600
-1830
-1
-4.5
-4444444444
-Philz Coffee
-Coffee & Tea
-20686 Stevens Creek Blvd Cupertino, CA 95014
-600
-1830
-1
-4.5
-5555555555
 Ale Arsenal
 Pubs
 971 Laurel St San Carlos, CA 94070

@@ -267,7 +267,7 @@ void Report::restaurantsBestRating()
     while(!done)
     {
         system(CLEAR);
-        cout << "What rating are you willing to accept? (0.5-5.0): ";
+        cout << "What rating are you willing to accept? (0.0-5.0): ";
         if(cin >> rating)
         {
             if(fmod(rating, .5) != 0 || rating < 0 || rating > 5)

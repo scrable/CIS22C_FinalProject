@@ -126,6 +126,7 @@ void RestaurantDatabase::removeRestaurantMenu()
 
     cin.clear();
     cin.ignore(1000, '\n');
+    uniqueBSTDatabase->inOrderPrint();
     cout << "What is the name of the restaurant you would like to delete? ";
     getline(cin, tempName);
     if(uniqueBSTDatabase->searchName(tempName))

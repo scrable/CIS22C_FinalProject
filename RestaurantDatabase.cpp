@@ -152,14 +152,14 @@ void RestaurantDatabase::removeRestaurantMenu()
                         cout << "\n\t\tRestaurant removed.";
                         removeRestaurant(r);
                         cin.ignore(1000, '\n');
-                        cout << "\n\t\tPress any key to continue." << endl;
+                        cout << "\n\t\tPress return to continue." << endl;
                         cin.get();
                         done = true;
                     }
                     else
                     {
                         cout << "\n\tPlease enter a valid restaurant number.";
-                        cout << "\n\n\n\t\tPress any key to continue." << endl;
+                        cout << "\n\n\n\t\tPress return to continue." << endl;
                         cin.ignore(1000, '\n');
                         cin.get();
                     }
@@ -171,7 +171,7 @@ void RestaurantDatabase::removeRestaurantMenu()
                 else
                 {
                     cout << "\n\tPlease enter a valid restaurant number";
-                    cout << "\n\n\n\t\tPress any key to continue." << endl;
+                    cout << "\n\n\n\t\tPress return to continue." << endl;
                     cin.ignore(1000, '\n');
                     cin.get();
                 }
@@ -179,7 +179,7 @@ void RestaurantDatabase::removeRestaurantMenu()
             else
             {
                 cout << "\n\tPlease enter a valid restaurant number";
-                cout << "\n\n\n\t\tPress any key to continue." << endl;
+                cout << "\n\n\n\t\tPress return to continue." << endl;
                 cin.clear();
                 cin.ignore(1000, '\n');
                 cin.get();
@@ -189,7 +189,7 @@ void RestaurantDatabase::removeRestaurantMenu()
     else
     {
         cout << "The restaurant with the name " << tempName << " does not exist in the database." << endl;
-        cout << "\n\n\n\t\tPress any key to continue." << endl;
+        cout << "\n\n\n\t\tPress return to continue." << endl;
         cin.get();
     }
 
@@ -375,7 +375,7 @@ void RestaurantDatabase::addRestaurantMenu()
                 system(CLEAR);
                 //we will pass addRestaurant all parameters for a restaurant
                 addRestaurant(rest);
-                cout << "\n\n\n\t\tRestaurant added successfully!\n\t\tPress any key to continue." << endl;
+                cout << "\n\n\n\t\tRestaurant added successfully!\n\t\tPress return to continue." << endl;
                 cin.ignore(1000, '\n');
                 cin.get();
                 system(CLEAR);

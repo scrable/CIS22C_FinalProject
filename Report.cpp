@@ -58,7 +58,7 @@ void Report::searchMainMenu()
             cout << "\n\t    Please enter a valid selection.\n";
             cin.clear();
             cin.ignore(1000, '\n');
-            cout << "\n\t    Press any key to continue.";
+            cout << "\n\t    Press return to continue.";
             cin.get();
             choice = 0;
         }
@@ -79,7 +79,7 @@ void Report::searchByName()
 
     hashTable->findRestaurant(tempRestaurantName);
 
-    cout << "\n\n\t\tPress any key to continue." << endl;
+    cout << "\n\n\t\tPress return to continue." << endl;
     cin.get();
 }
 
@@ -96,7 +96,7 @@ void Report::searchByCuisine()
 
     secondaryBSTDatabase->searchCuisine(tempCuisine);
 
-    cout << "Press any key to continue.";
+    cout << "Press return to continue.";
     cin.get();
 
 }
@@ -147,7 +147,7 @@ void Report::listMainMenu()
             cout << "\n\t    Please enter a valid selection.\n";
             cin.clear();
             cin.ignore(1000, '\n');
-            cout << "\n\t    Press any key to continue.";
+            cout << "\n\t    Press return to continue.";
             cin.get();
             choice = 0;
         }
@@ -162,7 +162,7 @@ void Report::listUnsorted()
     uniqueBSTDatabase->preOrderPrint();
     cin.clear();
     cin.ignore(1000, '\n');
-    cout << "\n\t    Press any key to continue.";
+    cout << "\n\t    Press return to continue.";
     cin.get();
     return;
 }
@@ -175,7 +175,7 @@ void Report::listSortedByName()
     cout << "\n------------------------------------" << endl << endl;
     cin.clear();
     cin.ignore(1000, '\n');
-    cout << "\n\t    Press any key to continue.";
+    cout << "\n\t    Press return to continue.";
     cin.get();
     return;
 }
@@ -188,7 +188,7 @@ void Report::listSortedByCuisine()
     cout << "\n------------------------------------" << endl << endl;
     cin.clear();
     cin.ignore(1000, '\n');
-    cout << "\n\t    Press any key to continue.";
+    cout << "\n\t    Press return to continue.";
     cin.get();
     return;
 }
@@ -239,7 +239,7 @@ void Report::statisticsMainMenu()
             cout << "\n\t    Please enter a valid selection.\n";
             cin.clear();
             cin.ignore(1000, '\n');
-            cout << "\n\t    Press any key to continue.";
+            cout << "\n\t    Press return to continue.";
             cin.get();
             choice = 0;
         }
@@ -252,7 +252,7 @@ void Report::restaurantsPerCuisine()
     system(CLEAR);
     secondaryBSTDatabase->buildCuisineList();
     cin.ignore(1000, '\n');
-    cout << "\n\t    Press any key to continue.";
+    cout << "\n\t    Press return to continue.";
     cin.get();
 }
 
@@ -271,7 +271,7 @@ void Report::restaurantsBestRating()
                 system(CLEAR);
                 cout << "\n\t\tInvalid rating." << endl;
                 cin.ignore(1000, '\n');
-                cout << "\n\t    Press any key to continue.";
+                cout << "\n\t    Press return to continue.";
                 cin.get();
             }
             else done = true;
@@ -282,7 +282,7 @@ void Report::restaurantsBestRating()
             cout << "\n\t    Invalid rating.\n";
             cin.clear();
             cin.ignore(1000, '\n');
-            cout << "\n\t    Press any key to continue.";
+            cout << "\n\t    Press return to continue.";
             cin.get();
         }
     }
@@ -290,7 +290,7 @@ void Report::restaurantsBestRating()
     if(!hashTable->findRestaurantRating(rating))
         cout << "\n\n\tNo restaurants with a rating of " << rating << " or higher could be found.\n";
     cin.ignore(1000, '\n');
-    cout << "\n\t    Press any key to continue.";
+    cout << "\n\t    Press return to continue.";
     cin.get();
 }
 
@@ -310,7 +310,7 @@ void Report::affordableRestaurants()
                 cout << "\n\t    Invalid cost.\n";
                 cin.clear();
                 cin.ignore(1000, '\n');
-                cout << "\n\t    Press any key to continue.";
+                cout << "\n\t    Press return to continue.";
                 cin.get();
             }
             else done = true;
@@ -321,7 +321,7 @@ void Report::affordableRestaurants()
             cout << "\n\t    Invalid cost.\n";
             cin.clear();
             cin.ignore(1000, '\n');
-            cout << "\n\t    Press any key to continue.";
+            cout << "\n\t    Press return to continue.";
             cin.get();
         }
     }
@@ -329,7 +329,7 @@ void Report::affordableRestaurants()
     if(!hashTable->affordableRestaurant(cost))
         cout << "\n\n\tNo restaurants with " << cost << " or lower cost could be found.\n";
     cin.ignore(1000, '\n');
-    cout << "\n\t    Press any key to continue.";
+    cout << "\n\t    Press return to continue.";
     cin.get();
 }
 

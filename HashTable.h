@@ -38,9 +38,6 @@ public:
     //returns the number of items in a bucket
     int numItemsAtIndex(int index);
 
-    //prints the entire hash table
-    void printTable();
-
     //returns a specific restaurantin a specific bucket
     //for the remove function
     Restaurant getRestaurant(int num, int index, string tempName);

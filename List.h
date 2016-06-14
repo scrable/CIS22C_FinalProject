@@ -23,11 +23,6 @@ private:
     Nodeptr tail;
     Nodeptr cursor; //the iterator
 
-    void reverse(Nodeptr node);
-    //Helper function for the public printReverse() function.
-    //Recursively prints the data in a List in reverse.
-
-
 public:
 
     /**Constructors and Destructors*/

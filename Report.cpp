@@ -289,6 +289,8 @@ void Report::restaurantsBestRating()
 
     if(!hashTable->findRestaurantRating(rating))
         cout << "\n\n\tNo restaurants with a rating of " << rating << " or higher could be found.\n";
+    else
+        cout << "------------------------------------" << endl;
     cin.ignore(1000, '\n');
     cout << "\n\t    Press return to continue.";
     cin.get();
@@ -328,6 +330,8 @@ void Report::affordableRestaurants()
 
     if(!hashTable->affordableRestaurant(cost))
         cout << "\n\n\tNo restaurants with " << cost << " or lower cost could be found.\n";
+    else
+        cout << "------------------------------------" << endl;
     cin.ignore(1000, '\n');
     cout << "\n\t    Press return to continue.";
     cin.get();

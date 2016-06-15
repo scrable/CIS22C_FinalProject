@@ -222,7 +222,8 @@ bool HashTable::affordableRestaurant(int cost)
             if (temp->rest.getCost() <= cost && temp->rest.getName() != "default name")
             {
                 found = true;
-                cout << temp->rest << endl;
+                cout << "------------------------------------" << endl;
+                cout << temp->rest;
             }
             temp = temp->next;
         }
@@ -278,7 +279,8 @@ bool HashTable::findRestaurantRating(double rating)
             if (temp->rest.getRating() >= rating && temp->rest.getRating() != -1)
             {
                 found = true;
-                cout << temp->rest << endl;
+                cout << "------------------------------------" << endl;
+                cout << temp->rest;
             }
             temp = temp->next;
         }

@@ -178,7 +178,7 @@ void BST<bstdata>::inOrderPrint(Nodeptr root)
     {
 
         inOrderPrint(root->left);
-        cout << "\n------------------------------------" << endl << endl;
+        cout << "------------------------------------" << endl;
         cout << root->rest;
         inOrderPrint(root->right);
     }
@@ -223,7 +223,7 @@ bool BST<bstdata>::containsCuisineValue(Nodeptr root, bstdata value)
             valTemp[i] = tolower(valTemp[i]);
         if(temp.find(valTemp) != std::string::npos)
         {
-            cout << "\n------------------------------------" << endl << endl;
+            cout << "------------------------------------" << endl;
             cout << root->rest;
         }
         containsCuisineValue(root->left, value);
@@ -237,7 +237,7 @@ template <class bstdata>
 void BST<bstdata>::searchCuisine(bstdata value)
 {
     if(containsCuisineValue(root, value))
-        cout << "\n------------------------------------" << endl << endl;
+        cout << "------------------------------------" << endl;
     else
         cout << "The cuisine " << value << " could not be found." << endl;
 }
@@ -390,13 +390,16 @@ void BST<bstdata>::buildCuisineList()
         cuisine.insert_tail(root->rest.getCuisine());
     buildCuisineList(root, cuisine);
     if(cuisine.start_cursor())
-        cout << "Cuisine\t\t  Quantity" << endl << endl;
-    while(!cuisine.off_end())
     {
-        int count =  calCuisine(cuisine.get_cursor());
-        cout << setw(20) << left << cuisine.get_cursor() << setw(2) << right << count << endl;
-        cuisine.move_cursor();
+        cout << setfill('-');
+        cout << "Cuisine\t\t\t    Quantity" << endl << endl;
+        while(!cuisine.off_end())
+        {
+            cout  << setw(30) << left << cuisine.get_cursor() << setw(3) << right << calCuisine(cuisine.get_cursor()) << endl;
+            cuisine.move_cursor();
+        }
     }
+
 }
 
 template <class bstdata>

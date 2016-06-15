@@ -78,3 +78,123 @@ Bakery
 2
 2.5
 6508028810
+Cicero's Pizza
+Pizza
+6138 Bollinger Rd, San Jose, CA 95129
+1100
+2100
+2
+4.0
+4087770690
+A Slice of New York
+Pizza
+3443 Stevens Creek Blvd, San Jose, CA 95117
+1100
+0000
+2
+4.5
+4082475423
+Falafel's Drive-In
+Middle Eastern
+2301 Stevens Creek Blvd, San Jose, CA 95128
+1000
+2000
+1
+4.0
+4082947886
+Off The Street
+Sandwiches
+484 Blossom Hill Rd, San Jose, CA 95123
+1100
+1700
+1
+4.5
+4089050438
+Thai Lovers
+Thai
+1111 Story Rd, Ste 1009, San Jose, CA- 95122
+800
+2000
+1
+4.0
+4082867759
+Adega Restaurant
+Portuguese
+1614 Alum Rock Ave, San Jose, CA 95116
+1130
+2130
+3
+4.5
+4089269075
+Arcadia, A Modern American Steakhouse by Michael Mina
+Steakhouse
+100 W San Carlos St, San Jose, CA 95113
+630
+2200
+3
+3.5
+4082784555
+Le Papillon
+French
+410 Saratoga Ave, San Jose, CA 95129
+500
+2100
+4
+4
+4082963730
+Scotts Seafood San Jose
+Seafood
+185 Park Ave, San Jose, CA 95113
+1130
+900
+3
+3.5
+4089711700
+Citrus
+American
+355 Santana Row, San Jose, CA 95128
+530
+2130
+3
+3.0
+4084235400
+Leichi
+Japanese
+246 Saratoga Ave, Santa Clara, CA 95050
+1130
+2200
+3
+4.0
+4088249052
+Tigelleria Organic Restaurant
+Italian
+76 E Campbell Ave, Campbell, CA 95008
+1130
+2200
+3
+4.0
+4088843808
+Birch Street
+French
+2363 Birch St, Palo Alto, CA 94306
+0000
+0000
+3
+3.5
+6503270284
+In-N-Out Burger
+Fast Food
+5611 Santa Teresa Blvd, San Jose, CA 95123
+1000
+0000
+1
+4.0
+8007861000
+Jubba Restaurant
+African
+5330 Terner Way, San Jose, CA 95136
+500
+2200
+2
+4.5
+4084401504

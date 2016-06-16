@@ -288,7 +288,10 @@ void Report::restaurantsBestRating()
     }
 
     if(!hashTable->findRestaurantRating(rating))
-        cout << "\n\n\tNo restaurants with a rating of " << rating << " or higher could be found.\n";
+        if(rating == 5)
+            cout << "\n\n\tNo restaurants with a rating of " << rating << " could be found.";
+        else
+            cout << "\n\n\tNo restaurants with a rating of " << rating << " or higher could be found.\n";
     else
         cout << "------------------------------------" << endl;
     cin.ignore(1000, '\n');

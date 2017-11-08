@@ -4,10 +4,12 @@
 Please watch this basic tutorial on how to use Github
 https://www.youtube.com/watch?v=XdhuWDdu-rk
 
+g++ *.cpp -o out
+./out
 
 ###Our Emails
 
-Corey Russ      cruss.seq11@gmail.com 
+Corey Russ      cruss.seq11@gmail.com
 
 Trupti Mehta    trupti929@gmail.com
 

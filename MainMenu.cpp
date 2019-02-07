@@ -90,6 +90,7 @@ void MainMenu::showMainMenu()
             cout << "\t\t\tPress return to exit.";
             cin.ignore();
             cin.get();
+            system(CLEAR);
             return;
         }
         else
